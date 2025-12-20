@@ -32,6 +32,6 @@
                                   [org.openvoxproject/kitchensink :classifier "test" :scope "test"]]}}
 
   :plugins  [[lein-parent "0.3.7"]
-             [org.openvoxproject/i18n "0.8.0"]]
+             [org.openvoxproject/i18n "0.9.3-SNAPSHOT"]]
   :aot [puppetlabs.trapperkeeper.services.scheduler.job]
   :repl-options {:init-ns user})
