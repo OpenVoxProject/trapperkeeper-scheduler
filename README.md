@@ -1,8 +1,6 @@
 # Trapperkeeper Scheduler Service
 
-[![Build Status](https://travis-ci.org/puppetlabs/trapperkeeper-scheduler.svg)](https://travis-ci.org/puppetlabs/trapperkeeper-scheduler)
-
-[![Clojars Project](http://clojars.org/puppetlabs/trapperkeeper-scheduler/latest-version.svg)](http://clojars.org/puppetlabs/trapperkeeper-scheduler)
+[![Clojars Project](http://clojars.org/org.openvoxproject/trapperkeeper-scheduler/latest-version.svg)](http://clojars.org/org.openvoxproject/trapperkeeper-scheduler)
 
 A Trapperkeeper service that provides a simple API for scheduling background tasks.
 
@@ -103,7 +101,6 @@ the [`org.quartz-scheduler/quartz`](http://www.quartz-scheduler.org/) library.
 * Add additional scheduling API functions with more complicated recurring models.`.
 * Add API for introspecting the state of currently scheduled jobs
 
-#Support
+## Support
 
-Please log tickets and issues at our [Jira Tracker](https://tickets.puppetlabs.com/issues/?jql=project%20%3D%20Trapperkeeper).
-
+GitHub issues and PRs are welcome! Additionally, drop us a line in [the Vox Pupuli Slack](https://voxpupuli.org/connect/).
