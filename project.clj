@@ -23,8 +23,8 @@
                    :unit (complement :integration)}
 
   :deploy-repositories [["releases" {:url "https://clojars.org/repo"
-                                     :username :env/clojars_jenkins_username
-                                     :password :env/clojars_jenkins_password
+                                     :username :env/CLOJARS_USERNAME
+                                     :password :env/CLOJARS_PASSWORD
                                      :sign-releases false}]]
 
   :profiles {:dev {:source-paths ["dev"]
