@@ -1,4 +1,4 @@
-(defproject org.openvoxproject/trapperkeeper-scheduler "1.3.0"
+(defproject org.openvoxproject/trapperkeeper-scheduler "1.3.1-SNAPSHOT"
   :description "Trapperkeeper Scheduler Service"
 
   :dependencies [[org.clojure/clojure]
