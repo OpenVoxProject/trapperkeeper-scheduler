@@ -20,7 +20,7 @@
                  [org.openvoxproject/trapperkeeper]
                  [org.openvoxproject/i18n ~i18n-version]
                  [org.openvoxproject/kitchensink]
-                 [org.quartz-scheduler/quartz "2.3.2" :exclusions [c3p0]]]
+                 [org.quartz-scheduler/quartz "2.5.2" :exclusions [c3p0]]]
 
   :min-lein-version "2.9.1"
 
