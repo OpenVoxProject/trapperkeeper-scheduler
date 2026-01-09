@@ -1,16 +1,28 @@
+(def kitchensink-version "3.5.3")
+(def trapperkeeper-version "4.3.0")
+(def i18n-version "1.0.2")
+
 (defproject org.openvoxproject/trapperkeeper-scheduler "1.3.1-SNAPSHOT"
   :description "Trapperkeeper Scheduler Service"
 
+  ;; These are to enforce consistent versions across dependencies of dependencies,
+  ;; and to avoid having to define versions in multiple places. If a component
+  ;; defined under :dependencies ends up causing an error due to :pedantic? :abort,
+  ;; because it is a dep of a dep with a different version, move it here.
+  :managed-dependencies [[org.clojure/clojure "1.12.4"]
+
+                         [org.openvoxproject/kitchensink ~kitchensink-version]
+                         [org.openvoxproject/kitchensink ~kitchensink-version :classifier "test"]
+                         [org.openvoxproject/trapperkeeper ~trapperkeeper-version]
+                         [org.openvoxproject/trapperkeeper ~trapperkeeper-version :classifier "test"]]
+
   :dependencies [[org.clojure/clojure]
                  [org.openvoxproject/trapperkeeper]
-                 [org.openvoxproject/i18n]
+                 [org.openvoxproject/i18n ~i18n-version]
                  [org.openvoxproject/kitchensink]
                  [org.quartz-scheduler/quartz "2.3.2" :exclusions [c3p0]]]
 
   :min-lein-version "2.9.1"
-
-  :parent-project {:coords [org.openvoxproject/clj-parent "7.6.3"]
-                   :inherit [:managed-dependencies]}
 
   :pedantic? :abort
 
@@ -31,7 +43,6 @@
                    :dependencies [[org.openvoxproject/trapperkeeper :classifier "test" :scope "test"]
                                   [org.openvoxproject/kitchensink :classifier "test" :scope "test"]]}}
 
-  :plugins  [[lein-parent "0.3.9"]
-             [org.openvoxproject/i18n "1.0.2"]]
+  :plugins  [[org.openvoxproject/i18n ~i18n-version]]
   :aot [puppetlabs.trapperkeeper.services.scheduler.job]
   :repl-options {:init-ns user})
