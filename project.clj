@@ -1,4 +1,4 @@
-(def kitchensink-version "3.5.3")
+(def kitchensink-version "3.5.4")
 (def trapperkeeper-version "4.3.0")
 (def i18n-version "1.0.2")
 
@@ -10,6 +10,8 @@
   ;; defined under :dependencies ends up causing an error due to :pedantic? :abort,
   ;; because it is a dep of a dep with a different version, move it here.
   :managed-dependencies [[org.clojure/clojure "1.12.4"]
+                         [org.clojure/tools.logging "1.3.1"]
+                         [clj-time "0.15.2"]
 
                          [org.openvoxproject/kitchensink ~kitchensink-version]
                          [org.openvoxproject/kitchensink ~kitchensink-version :classifier "test"]
