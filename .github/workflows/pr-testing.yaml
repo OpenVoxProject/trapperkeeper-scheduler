@@ -1,10 +1,14 @@
+---
 name: PR Testing
 
 on:
-  workflow_dispatch:
-  pull_request:
-    types: [opened, reopened, edited, synchronize]
-    paths: ['src/**','test/**','project.clj']
+  pull_request: {}
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
 
 jobs:
   pr-testing:
@@ -37,3 +41,15 @@ jobs:
       - name: clojure tests
         run: lein test
         timeout-minutes: 30
+
+  tests:
+    if: always()
+    needs:
+      - pr-testing
+    runs-on: ubuntu-24.04
+    name: Test suite
+    steps:
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}
