@@ -2,7 +2,7 @@
 (def trapperkeeper-version "4.3.2")
 (def i18n-version "1.0.3")
 
-(defproject org.openvoxproject/trapperkeeper-scheduler "1.3.1-SNAPSHOT"
+(defproject org.openvoxproject/trapperkeeper-scheduler "1.3.1"
   :description "Trapperkeeper Scheduler Service"
 
   ;; These are to enforce consistent versions across dependencies of dependencies,
