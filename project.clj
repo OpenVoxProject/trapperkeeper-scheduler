@@ -1,28 +1,27 @@
-(def kitchensink-version "3.5.5")
-(def trapperkeeper-version "4.3.2")
 (def i18n-version "1.0.3")
 
 (defproject org.openvoxproject/trapperkeeper-scheduler "1.3.2-SNAPSHOT"
   :description "Trapperkeeper Scheduler Service"
 
-  ;; These are to enforce consistent versions across dependencies of dependencies,
-  ;; and to avoid having to define versions in multiple places. If a component
-  ;; defined under :dependencies ends up causing an error due to :pedantic? :abort,
-  ;; because it is a dep of a dep with a different version, move it here.
+  ;; Generally, try to keep version pins in :managed-dependencies and the libraries
+  ;; this project actually uses in :dependencies, inheriting the version from
+  ;; :managed-dependencies. This prevents endless version conflicts due to deps of deps.
+  ;; Renovate should keep the versions largely in sync between projects.
   :managed-dependencies [[org.clojure/clojure "1.12.4"]
                          [org.clojure/tools.logging "1.3.1"]
                          [clj-time "0.15.2"]
-
-                         [org.openvoxproject/kitchensink ~kitchensink-version]
-                         [org.openvoxproject/kitchensink ~kitchensink-version :classifier "test"]
-                         [org.openvoxproject/trapperkeeper ~trapperkeeper-version]
-                         [org.openvoxproject/trapperkeeper ~trapperkeeper-version :classifier "test"]]
+                         [org.openvoxproject/i18n ~i18n-version]
+                         [org.openvoxproject/kitchensink "3.5.5"]
+                         [org.openvoxproject/kitchensink "3.5.5" :classifier "test"]
+                         [org.openvoxproject/trapperkeeper "4.3.2"]
+                         [org.openvoxproject/trapperkeeper "4.3.2" :classifier "test"]
+                         [org.quartz-scheduler/quartz "2.5.2"]]
 
   :dependencies [[org.clojure/clojure]
-                 [org.openvoxproject/trapperkeeper]
-                 [org.openvoxproject/i18n ~i18n-version]
+                 [org.openvoxproject/i18n]
                  [org.openvoxproject/kitchensink]
-                 [org.quartz-scheduler/quartz "2.5.2" :exclusions [c3p0]]]
+                 [org.openvoxproject/trapperkeeper]
+                 [org.quartz-scheduler/quartz :exclusions [c3p0]]]
 
   :min-lein-version "2.9.1"
 
