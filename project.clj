@@ -1,6 +1,6 @@
 (def i18n-version "1.0.4")
 
-(defproject org.openvoxproject/trapperkeeper-scheduler "1.3.2-SNAPSHOT"
+(defproject org.openvoxproject/trapperkeeper-scheduler "1.3.2"
   :description "Trapperkeeper Scheduler Service"
 
   ;; Generally, try to keep version pins in :managed-dependencies and the libraries
