@@ -13,8 +13,8 @@
                          [org.openvoxproject/i18n ~i18n-version]
                          [org.openvoxproject/kitchensink "3.5.8"]
                          [org.openvoxproject/kitchensink "3.5.8" :classifier "test"]
-                         [org.openvoxproject/trapperkeeper "5.0.4"]
-                         [org.openvoxproject/trapperkeeper "5.0.4" :classifier "test"]
+                         [org.openvoxproject/trapperkeeper "5.0.5"]
+                         [org.openvoxproject/trapperkeeper "5.0.5" :classifier "test"]
                          [org.quartz-scheduler/quartz "2.5.2"]]
 
   :dependencies [[org.clojure/clojure]
