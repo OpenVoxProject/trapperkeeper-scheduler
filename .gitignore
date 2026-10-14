@@ -13,3 +13,7 @@ pom.xml.asc
 /resources/locales.clj
 /dev-resources/i18n/bin
 /resources/**/Messages*.class
+/.bundle
+/.vendor
+/vendor
+/Gemfile.lock
