@@ -1,4 +1,4 @@
-(def i18n-version "1.0.5")
+(def i18n-version "1.0.6")
 
 (defproject org.openvoxproject/trapperkeeper-scheduler "1.4.2-SNAPSHOT"
   :description "Trapperkeeper Scheduler Service"
